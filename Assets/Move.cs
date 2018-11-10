@@ -8,12 +8,12 @@ public class Move : MonoBehaviour {
     [SerializeField] GameObject nails;
 
     // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
+    void Start ()
+    {
+    }
+
+    // Update is called once per frame
+    void Update ()
     {
 	    if(Input.GetKeyDown(KeyCode.C))
         {
@@ -22,7 +22,7 @@ public class Move : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.X))
         {
-            hand.GetComponent<HandMovement>().MoveHand();
+            hand.GetComponent<HandMovement>().MoveHand(InputAction.Debug);
         }
     }
 }

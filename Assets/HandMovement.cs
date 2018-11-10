@@ -14,15 +14,22 @@ public class HandMovement : MonoBehaviour
     [SerializeField]
     GameObject waypoint3;
 
-
-    public void MoveHand()
+    private void Awake()
     {
-        var sequence = DOTween.Sequence()
-            .Append(transform.DOMove(waypoint1.transform.position, 0.25f).SetEase(Ease.Linear))
-            .Append(transform.DOMove(waypoint2.transform.position, 0.25f).SetEase(Ease.Linear))
-            .Append(transform.DOMove(waypoint3.transform.position, 0.25f).SetEase(Ease.Linear));
+        SwipeManager.OnSwipeHappened += MoveHand;
+    }
 
-        sequence.Play();
+    public void MoveHand(InputAction direction)
+    {
+        if (direction == InputAction.Down || direction == InputAction.Up)
+        {
+            var sequence = DOTween.Sequence()
+                .Append(transform.DOMove(waypoint1.transform.position, 0.25f).SetEase(Ease.Linear))
+                .Append(transform.DOMove(waypoint2.transform.position, 0.25f).SetEase(Ease.Linear))
+                .Append(transform.DOMove(waypoint3.transform.position, 0.25f).SetEase(Ease.Linear));
+
+            sequence.Play();
+        }
     }
 
 	// Use this for initialization

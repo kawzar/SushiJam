@@ -73,28 +73,28 @@ public class SwipeManager : MonoBehaviour
                     //check if the drag is vertical or horizontal
                     if(Mathf.Abs(lp.x - fp.x) > Mathf.Abs(lp.y - fp.y))
                     {
-                        if((lp.x > fp.x))
-                        {
-                            if(!alreadyTriggeredThisSwipe)
-                            {
-                                //Right swipe                            
-                                print("Swipe right");
-                                OnSwipeHappened?.Invoke(InputAction.Right);
-                                alreadyTriggeredThisSwipe = true;
-                            }
-                        }
-                        else
-                        {
-                            if(!alreadyTriggeredThisSwipe)
-                            {
-                                //Left swipe
-                                print("Left");
-                                alreadyTriggeredThisSwipe = true;
-                                OnSwipeHappened?.Invoke(InputAction.Left);
-                            }
-                        }
+                        //if((lp.x > fp.x))
+                        //{
+                        //    if(!alreadyTriggeredThisSwipe)
+                        //    {
+                        //        //Right swipe                            
+                        //        print("Swipe right");
+                        //        OnSwipeHappened?.Invoke(InputAction.Right);
+                        //        alreadyTriggeredThisSwipe = true;
+                        //    }
+                        //}
+                        //else
+                        //{
+                        //    if(!alreadyTriggeredThisSwipe)
+                        //    {
+                        //        //Left swipe
+                        //        print("Left");
+                        //        alreadyTriggeredThisSwipe = true;
+                        //        OnSwipeHappened?.Invoke(InputAction.Left);
+                        //    }
+                        //}
 
-                        Horizontal = Mathf.Clamp(lp.x - fp.x, -1, 1);
+                        //Horizontal = Mathf.Clamp(lp.x - fp.x, -1, 1);
                     }
                     else
                     {   //the vertical movement is greater than the horizontal movement
