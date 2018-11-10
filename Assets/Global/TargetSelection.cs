@@ -41,7 +41,7 @@ namespace Global
         {
             if (_currentImage != null)
             {
-                _currentImage.enabled = false;
+                _currentImage.gameObject.SetActive(false);
             }
         }
     }

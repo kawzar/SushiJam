@@ -8,7 +8,7 @@ namespace Global.States
         {
             TargetSelection.Instance.DestroyCurrent();
             TargetSelection.Instance.SetCorrect(GiverFIsh.Instance.Crab);
-            GameManager.Instance.crabRecipeImg.enabled = true;
+            GameManager.Instance.crabRecipeImg.gameObject.SetActive(true);
             TargetSelection.Instance.SetGameObject(GameManager.Instance.crabRecipeImg);
         }
     }

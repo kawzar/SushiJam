@@ -9,7 +9,7 @@ namespace Global.States
         {
             TargetSelection.Instance.DestroyCurrent();
             TargetSelection.Instance.SetCorrect(GiverFIsh.Instance.Shrimp);
-            GameManager.Instance.shrimpRecipeImg.enabled = true;
+            GameManager.Instance.shrimpRecipeImg.gameObject.SetActive(true);
             TargetSelection.Instance.SetGameObject(GameManager.Instance.shrimpRecipeImg);
         }
     }

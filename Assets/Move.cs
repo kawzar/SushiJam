@@ -22,7 +22,7 @@ public class Move : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.X))
         {
-            hand.GetComponent<HandMovement>().MoveHand(InputAction.Debug);
+            hand.GetComponent<HandMovement>().MoveHand(InputAction.Down);
         }
     }
 }

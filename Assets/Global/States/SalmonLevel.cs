@@ -8,7 +8,7 @@ namespace Global.States
         {
             TargetSelection.Instance.DestroyCurrent();
             TargetSelection.Instance.SetCorrect(GiverFIsh.Instance.Salmon);
-            GameManager.Instance.salmonRecipeImg.enabled = true;
+            GameManager.Instance.salmonRecipeImg.gameObject.SetActive(true);
             TargetSelection.Instance.SetGameObject(GameManager.Instance.salmonRecipeImg);
 
         }

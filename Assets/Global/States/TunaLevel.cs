@@ -9,7 +9,7 @@ namespace Global.States
             
             TargetSelection.Instance.DestroyCurrent();
             TargetSelection.Instance.SetCorrect(GiverFIsh.Instance.Tuna);
-            GameManager.Instance.tunaRecipeImg.enabled = true;
+            GameManager.Instance.tunaRecipeImg.gameObject.SetActive(true);
             TargetSelection.Instance.SetGameObject(GameManager.Instance.tunaRecipeImg);
         }
     }
