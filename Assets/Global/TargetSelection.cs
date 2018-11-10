@@ -1,4 +1,5 @@
 using Global.Stats;
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Global
@@ -9,6 +10,7 @@ namespace Global
         private Fish _currentTarget;
 
         private static TargetSelection _instance;
+        private GameObject _currentGameObject;
         public static TargetSelection Instance => _instance = _instance ?? new TargetSelection();
 
         public void HitTarget()
@@ -28,9 +30,16 @@ namespace Global
         {
             _correctTarget = fish;
         }
-        
-        
-        
-        
+
+
+        public void SetGameObject(GameObject obj)
+        {
+            _currentGameObject = obj;
+        }
+
+        public void DestroyCurrent()
+        {
+            if(_currentGameObject!=null) GameObject.Destroy(_currentGameObject);
+        }
     }
 }

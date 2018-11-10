@@ -10,7 +10,7 @@ namespace Global
         public Fish Shrimp { get; private set; } = new Shrimp();
         public Fish Tuna { get; private set; } = new Tuna();
 
-        private Fish[] _fishes;
+        private readonly Fish[] _fishes;
 
         private GiverFIsh()
         {
