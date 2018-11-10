@@ -19,5 +19,10 @@ public class Move : MonoBehaviour {
         {
             nails.GetComponent<NailScript>().GrowNails();
         }
-	}
+
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            hand.GetComponent<HandMovement>().MoveHand();
+        }
+    }
 }
