@@ -13,6 +13,8 @@ public class GameManager : ScriptSingleton<GameManager>
     public GameObject tunaPrefab;
     #endregion
 
+	public Transform RecipiesStartPoint; 
+
     // Use this for initialization
     void Start () {
 	}

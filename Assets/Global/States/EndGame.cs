@@ -4,7 +4,12 @@ namespace Global.States
     {
         public void Start()
         {
-            throw new System.NotImplementedException();
+            
+        }
+
+        public void Next()
+        {
+            
         }
     }
 }

@@ -1,12 +1,19 @@
 
 
+using UnityEngine;
+
 namespace Global.States
 {
     public class PlayerTurn:GameState
     {
-        private Level _level;
-        
         public void Start()
+        {
+            Debug.Log("Holis player turn");
+            var level = GiverLevels.Instance.GetRandom();
+            level.SetTarget();
+        }
+
+        public void Next()
         {
             
         }
