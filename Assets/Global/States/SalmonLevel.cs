@@ -8,11 +8,9 @@ namespace Global.States
         {
             TargetSelection.Instance.DestroyCurrent();
             TargetSelection.Instance.SetCorrect(GiverFIsh.Instance.Salmon);
-            var obj = GameManager.Instance.salmonPrefab.gameObject;
-            obj.transform.position = GameManager.Instance.RecipiesStartPoint.position;
-            GameObject.Instantiate(obj);
-            TargetSelection.Instance.SetGameObject(obj);
-            
+            GameManager.Instance.salmonRecipeImg.enabled = true;
+            TargetSelection.Instance.SetGameObject(GameManager.Instance.salmonRecipeImg);
+
         }
     }
 }

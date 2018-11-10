@@ -3,7 +3,13 @@ guid: ff291c89d97c9c344aef093c778c0db6
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - shrimpPrefab: {instanceID: 0}
+  - crabPrefab: {fileID: 1762775918174794, guid: 0d28a55d47efecd4eb3979f058272c9f,
+      type: 2}
+  - salmonPrefab: {instanceID: 0}
+  - tunaPrefab: {instanceID: 0}
+  - RecipiesStartPoint: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

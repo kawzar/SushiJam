@@ -9,9 +9,8 @@ namespace Global.States
         {
             TargetSelection.Instance.DestroyCurrent();
             TargetSelection.Instance.SetCorrect(GiverFIsh.Instance.Shrimp);
-            var obj = GameManager.Instance.shrimpPrefab.gameObject;
-            GameObject.Instantiate(obj);
-            TargetSelection.Instance.SetGameObject(obj);
+            GameManager.Instance.shrimpRecipeImg.enabled = true;
+            TargetSelection.Instance.SetGameObject(GameManager.Instance.shrimpRecipeImg);
         }
     }
 }

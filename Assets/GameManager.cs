@@ -2,19 +2,18 @@
 using System.Collections.Generic;
 using RookBirdTools.Patterns;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : ScriptSingleton<GameManager>
 {
     #region Fish Sprites
-    [Header("Fish prefab")]
-    public GameObject shrimpPrefab;
-    public GameObject crabPrefab;
-    public GameObject salmonPrefab;
-    public GameObject tunaPrefab;
+    [Header("Fish recipe images")]
+    public Image shrimpRecipeImg;
+    public Image crabRecipeImg;
+    public Image salmonRecipeImg;
+    public Image tunaRecipeImg;
     #endregion
-
-	public Transform RecipiesStartPoint; 
-
+       
     // Use this for initialization
     void Start () {
 	}

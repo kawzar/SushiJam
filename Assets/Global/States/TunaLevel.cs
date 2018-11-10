@@ -9,10 +9,8 @@ namespace Global.States
             
             TargetSelection.Instance.DestroyCurrent();
             TargetSelection.Instance.SetCorrect(GiverFIsh.Instance.Tuna);
-            var obj = GameManager.Instance.tunaPrefab.gameObject;
-            obj.transform.position = GameManager.Instance.RecipiesStartPoint.position;
-            GameObject.Instantiate(obj);
-            TargetSelection.Instance.SetGameObject(obj);
+            GameManager.Instance.tunaRecipeImg.enabled = true;
+            TargetSelection.Instance.SetGameObject(GameManager.Instance.tunaRecipeImg);
         }
     }
 }

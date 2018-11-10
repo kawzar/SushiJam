@@ -8,10 +8,8 @@ namespace Global.States
         {
             TargetSelection.Instance.DestroyCurrent();
             TargetSelection.Instance.SetCorrect(GiverFIsh.Instance.Crab);
-            var obj = GameManager.Instance.crabPrefab.gameObject;
-            obj.transform.position = GameManager.Instance.RecipiesStartPoint.position;
-            GameObject.Instantiate(obj);
-            TargetSelection.Instance.SetGameObject(obj);
+            GameManager.Instance.crabRecipeImg.enabled = true;
+            TargetSelection.Instance.SetGameObject(GameManager.Instance.crabRecipeImg);
         }
     }
 }

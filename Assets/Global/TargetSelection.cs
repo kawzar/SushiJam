@@ -10,7 +10,7 @@ namespace Global
         private Fish _currentTarget;
 
         private static TargetSelection _instance;
-        private GameObject _currentGameObject;
+        private Image _currentImage;
         public static TargetSelection Instance => _instance = _instance ?? new TargetSelection();
 
         public void HitTarget()
@@ -32,14 +32,17 @@ namespace Global
         }
 
 
-        public void SetGameObject(GameObject obj)
+        public void SetGameObject(Image obj)
         {
-            _currentGameObject = obj;
+            _currentImage = obj;
         }
 
         public void DestroyCurrent()
         {
-            if(_currentGameObject!=null) GameObject.Destroy(_currentGameObject);
+            if (_currentImage != null)
+            {
+                _currentImage.enabled = false;
+            }
         }
     }
 }
