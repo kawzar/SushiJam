@@ -19,7 +19,7 @@ public class NailScript : MonoBehaviour
         if (iteration < waypoints.Length - 1)
         {
             iteration++;
-            transform.DOMove(waypoints[iteration].transform.position, animationDuration);
+            transform.DOLocalMove(waypoints[iteration].transform.localPosition, animationDuration);
         }
     }
 
