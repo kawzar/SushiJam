@@ -1,6 +1,6 @@
 namespace Global
 {
-    public class Salmon: Fish
+    public class Tuna : Fish
     {
         
     }

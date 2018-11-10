@@ -1,6 +1,6 @@
 namespace Global
 {
-    public class GameStats
+    public class Crab : Fish
     {
         
     }
