@@ -1,13 +1,27 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using RookBirdTools.Patterns;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager : ScriptSingleton<GameManager>
 {
-    // recetitas serializado con buckets 
+    #region Fish Sprites
+    [Header("Fish sprites")]
+    [SerializeField]
+    private Sprite shrimpSprite;
 
-	// Use this for initialization
-	void Start () {
+    [SerializeField]
+    private Sprite crabSprite;
+
+    [SerializeField]
+    private Sprite salmonSprite;
+
+    [SerializeField]
+    private Sprite tunaSprite;
+    #endregion
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
