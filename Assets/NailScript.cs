@@ -5,9 +5,9 @@ using DG.Tweening;
 
 public class NailScript : MonoBehaviour
 {
+    [SerializeField]
+    GameObject[] waypoints;
 
-    [SerializeField] GameObject maxPosition;
-    public int rollCount = 5;
     public float animationDuration = 0.25f;
 
     float initialPosition = 0f;
@@ -16,12 +16,10 @@ public class NailScript : MonoBehaviour
 
     public void GrowNails()
     {
-        if (iteration < rollCount)
+        if (iteration < waypoints.Length - 1)
         {
-            float delta = (maxPosition.transform.localPosition.y - initialPosition) / rollCount;
             iteration++;
-
-            transform.DOLocalMoveY(initialPosition + delta * iteration, animationDuration);
+            transform.DOLocalMove(waypoints[iteration].transform.localPosition, animationDuration);
         }
     }
 
