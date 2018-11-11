@@ -33,6 +33,11 @@ public class GameManager : ScriptSingleton<GameManager>
     #endregion
 	
 	[SerializeField] public GameObject nails;
+    public GameOverScreen gameOverScreen;
 
-    
+    private new void Awake()
+    {
+        base.Awake();
+        gameOverScreen = FindObjectOfType<GameOverScreen>();
+    }
 }
