@@ -27,6 +27,10 @@ namespace Global.States
             {
                 TargetGiver.Instance.Get(AnotherFish);    
             }
+            else
+            {
+                Next();
+            }
             
         }
 
@@ -39,7 +43,8 @@ namespace Global.States
 
         public void Next()
         {
-            
+            var next= new EndGame();
+            next.Start();
         }
     }
 }
