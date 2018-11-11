@@ -12,5 +12,17 @@ namespace Global
             var next= new PlayerTurn();
             next.Start();
         }
+
+        public void OnExitClick()
+        {
+            Application.Quit();
+        }
+
+        private void Update()
+        {
+#if UNITY_EDITOR
+            Time.timeScale = Input.GetKey(KeyCode.P) ? 50 : 1;
+#endif
+        }
     }
 }

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class ScorePlates : MonoBehaviour
 {
+    public static ScorePlates Instance;
     [SerializeField]
     Image smallPlate;
 
@@ -15,7 +16,11 @@ public class ScorePlates : MonoBehaviour
     [SerializeField]
     Image largePlate;
 
-   public void ShowScorePlates()
+    private void Awake()
+    {
+        Instance = this;
+    }
+    public void ShowScorePlates()
     {
         var score = GameStats.Instance.GetScore();
         
@@ -31,6 +36,13 @@ public class ScorePlates : MonoBehaviour
         {
             largePlate.enabled = true;
         }
+    }
+
+    public void Hide()
+    {
+        smallPlate.enabled = false;
+        mediumPlate.enabled = false;
+        largePlate.enabled = false;
     }
 
 }

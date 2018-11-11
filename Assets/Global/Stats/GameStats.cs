@@ -30,5 +30,13 @@ namespace Global.Stats
             return _score;
         }
 
+        public void Reset()
+        {
+            _score = 0;
+        }
+
+
+
+
     }
 }

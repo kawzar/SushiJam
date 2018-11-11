@@ -1,5 +1,6 @@
 using System;
 using Assets.Global;
+using Global.Stats;
 using UnityEngine;
 
 namespace Global.States
@@ -16,6 +17,7 @@ namespace Global.States
             SacredMusic.Instance.PlayWaterfall();
             ActionBear = Normal;
             var level = GiverLevels.Instance.GetRandom();
+            GameStats.Instance.Reset();
             level.SetTarget();
             TargetGiver.Instance.Get(AnotherFish);
             GameObject.FindObjectOfType<HandMovement>().CanMove=true;

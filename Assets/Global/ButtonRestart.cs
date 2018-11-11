@@ -7,7 +7,9 @@ public class ButtonRestart : MonoBehaviour {
 
 	public void OnClick()
 	{
+        print("CLICK");
 		GameManager.Instance.gameOverScreen.Hide();
+        ScorePlates.Instance.Hide();
 		var playerTurn = new PlayerTurn();
 		playerTurn.Start();
 	}
