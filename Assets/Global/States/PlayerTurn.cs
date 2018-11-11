@@ -11,6 +11,7 @@ namespace Global.States
             Debug.Log("Holis player turn");
             var level = GiverLevels.Instance.GetRandom();
             level.SetTarget();
+            TargetGiver.Instance.Get();    
         }
 
         public void Next()
