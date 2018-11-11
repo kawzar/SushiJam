@@ -91,5 +91,10 @@ namespace Global
                     },_speedFever);
             });
         }
+
+        public void Reset()
+        {
+            _sprite.transform.position = GameManager.Instance.StartPoint.position;
+        }
     }
 }

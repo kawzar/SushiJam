@@ -38,7 +38,6 @@ public class NailScript : ScriptSingleton<NailScript>
         }
         else
         {
-	        Debug.Log("OnFeverrrr");
 	        SacredMusic.Instance.PlayLoopTemaFever();
 	        _onFever.Invoke();
 	        TimeStuff.DoAfter(() =>
