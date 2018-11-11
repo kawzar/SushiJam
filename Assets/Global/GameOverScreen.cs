@@ -8,6 +8,8 @@ using Global.Stats;
 public class GameOverScreen : MyScreen
 {
     [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField]
+    private ScorePlates scorePlates;
 
     private void Start()
     {
@@ -17,6 +19,7 @@ public class GameOverScreen : MyScreen
     public void ShowGameOverScreen()
     {
         scoreText.text = GameStats.Instance.GetScore().ToString();
+        scorePlates.ShowScorePlates();
         Show();
     }
 }
