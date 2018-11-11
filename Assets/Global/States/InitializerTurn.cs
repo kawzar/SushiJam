@@ -8,7 +8,7 @@ namespace Global.States
         {
             //Desactivar menu de entrada
             SacredMusic.Instance.PlayIntro();
-            TimeStuff.DoAfter(Next,5);
+            
         }
 
         public void Next()
