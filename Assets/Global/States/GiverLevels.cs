@@ -21,8 +21,6 @@ namespace Global.States
         public Level GetRandom()
         {
             var rand = Random.Range(0, 4);
-            Debug.Log(rand);
-            Debug.Log(_levels[rand]);
             return _levels[rand];
         }
         

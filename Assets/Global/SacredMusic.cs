@@ -17,8 +17,6 @@ public class SacredMusic : ScriptSingleton<SacredMusic>
     public void PlayIntro()
     {
         IntroTema.Play();
-        IntroTema.volume = 0;
-        IntroTema.DOFade(1, 3);
     }
 
     public void StopIntro()
@@ -30,8 +28,6 @@ public class SacredMusic : ScriptSingleton<SacredMusic>
     public void PlayLoopTema()
     {
         LoopTema.Play();
-        LoopTema.volume = 0;
-        LoopTema.DOFade(1, 5);
         LoopTemaFever.volume = 0;
         LoopTemaFever.Play();
     }
@@ -55,6 +51,8 @@ public class SacredMusic : ScriptSingleton<SacredMusic>
     
     public void PlayWaterfall()
     {
+        Waterfall.volume = 0;
+        Waterfall.loop = true;
         Waterfall.Play();
     }
 	
