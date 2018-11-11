@@ -43,6 +43,7 @@ namespace Assets.Global
         private void StopWatch()
         {
             isTimeRunning = false;
+            RemainingTime = 0.0f;
         }
 
         public void OnStop(Action onStop)
