@@ -1,3 +1,5 @@
+using RookBirdTools.MoreTools;
+
 namespace Global.States
 {
     public class InitializerTurn : GameState
@@ -5,12 +7,13 @@ namespace Global.States
         public void Start()
         {
             //Desactivar menu de entrada
-            Next();
-            
+            SacredMusic.Instance.PlayIntro();
+            TimeStuff.DoAfter(Next,5);
         }
 
         public void Next()
         {
+            SacredMusic.Instance.StopIntro();
             var next= new PlayerTurn();
             next.Start();
         }

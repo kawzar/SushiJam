@@ -4,6 +4,7 @@ namespace Global.States
     {
         public void Start()
         {
+            SacredMusic.Instance.WinSound();
             GameManager.Instance.gameOverScreen.ShowGameOverScreen();
         }
 

@@ -12,6 +12,7 @@ namespace Global.States
         
         public void Start()
         {
+            SacredMusic.Instance.PlayLoopTema();
             ActionBear = Normal;
             Debug.Log("Holis player turn");
             var level = GiverLevels.Instance.GetRandom();
@@ -65,6 +66,7 @@ namespace Global.States
 
         public void Next()
         {
+            SacredMusic.Instance.StopPlayLoop();
             var next= new EndGame();
             next.Start();
         }
