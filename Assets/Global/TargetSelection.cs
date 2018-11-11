@@ -12,10 +12,11 @@ namespace Global
         private static TargetSelection _instance;
         private Image _currentImage;
         public static TargetSelection Instance => _instance = _instance ?? new TargetSelection();
+        public bool _inPosition { get; set; }= false;
 
         public void HitTarget()
         {
-            if (_currentTarget == _correctTarget)
+            if (_inPosition && (_currentTarget == _correctTarget))
             {
                 GameStats.Instance.Increment();
             }

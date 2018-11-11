@@ -13,10 +13,12 @@ namespace Global
         {
             var moveToHit=_sprite.transform.DOMove(GameManager.Instance.HitPoint.position, _speed);
             moveToHit.OnComplete(() =>
-                {
+            {
+                TargetSelection.Instance._inPosition = true;
                     TimeStuff.DoAfter(
                         () =>
                         {
+                            TargetSelection.Instance._inPosition = false;
                             _sprite.transform.DOMove(GameManager.Instance.DestinyPoint.position, _speed);
                         },_speed);
                 });
