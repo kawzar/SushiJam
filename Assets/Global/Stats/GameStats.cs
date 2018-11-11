@@ -18,7 +18,10 @@ namespace Global.Stats
             _score = _score - _resolver.Decrement();
         }
         
-        
+        public int GetScore()
+        {
+            return _score;
+        }
 
     }
 }

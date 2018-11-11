@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Assets.Global;
+using Global.Stats;
 using RookBirdTools.Patterns;
 using TMPro;
 using UnityEngine;
@@ -7,16 +9,15 @@ using UnityEngine.UI;
 
 public class GameManager : ScriptSingleton<GameManager>
 {
-    public float maxTime = 60.0f;
-    public float currentTime = 0f;
     public int score;
-    public bool isTimeRunning;
 
     [SerializeField]
     TextMeshProUGUI stopwatchText;
 
     [SerializeField]
     TextMeshProUGUI scorePointsText;
+
+    private Stopwatch stopwatch;
 
     #region Fish Sprites
     [Header("Fish recipe images")]
@@ -42,21 +43,15 @@ public class GameManager : ScriptSingleton<GameManager>
 
     private void Start()
     {
-        isTimeRunning = true;
+        stopwatch = new Stopwatch();
+        stopwatch.Start();
     }
 
     void Update ()
     {
-        if (isTimeRunning)
-        {
-            currentTime += Time.deltaTime;
-            stopwatchText.text = (maxTime - currentTime).ToString("0.00");
+        stopwatch.UpdateClock(Time.deltaTime);
+        stopwatchText.text = stopwatch.RemainingTime.ToString("0.00");
 
-            if (currentTime >= maxTime)
-            {
-                stopwatchText.text = 0f.ToString("0.00");
-                isTimeRunning = false;
-            }
-        }
+        scorePointsText.text = GameStats.Instance.GetScore().ToString();
     }
 }

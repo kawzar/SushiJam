@@ -1,5 +1,4 @@
-
-
+using System;
 using UnityEngine;
 
 namespace Global.States
@@ -11,6 +10,13 @@ namespace Global.States
             Debug.Log("Holis player turn");
             var level = GiverLevels.Instance.GetRandom();
             level.SetTarget();
+            SwipeManager.OnSwipeHappened += PlayerSwipe;
+
+        }
+
+        private void PlayerSwipe(InputAction direction)
+        {
+            TargetSelection.Instance.HitTarget();
         }
 
         public void Next()

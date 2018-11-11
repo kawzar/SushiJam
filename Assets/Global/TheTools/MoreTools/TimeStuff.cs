@@ -70,7 +70,4 @@ namespace RookBirdTools.MoreTools
             }
         }
     }
-    
-
-
 }
