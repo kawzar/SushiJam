@@ -1,7 +1,12 @@
 fileFormatVersion: 2
 guid: c2e2c0ee231f9f246b21fc6a9607753b
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: TemakiAtun_SalmonSashimi_MakiCangrejo_NiguiriCamaron_0
+    21300002: TemakiAtun_SalmonSashimi_MakiCangrejo_NiguiriCamaron_1
+    21300004: TemakiAtun_SalmonSashimi_MakiCangrejo_NiguiriCamaron_2
+    21300006: TemakiAtun_SalmonSashimi_MakiCangrejo_NiguiriCamaron_3
+    21300008: TemakiAtun_SalmonSashimi_MakiCangrejo_NiguiriCamaron_4
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -40,7 +45,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -69,9 +74,142 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: TemakiAtun_SalmonSashimi_MakiCangrejo_NiguiriCamaron_0
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 328
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df900ddb82fff504fa1bb4f443a49475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TemakiAtun_SalmonSashimi_MakiCangrejo_NiguiriCamaron_1
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 54
+        width: 262
+        height: 253
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1131fa771e1ffc04f9f31effec502308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TemakiAtun_SalmonSashimi_MakiCangrejo_NiguiriCamaron_2
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 71
+        width: 289
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b1654ff36788fd4099543b090ab43e6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TemakiAtun_SalmonSashimi_MakiCangrejo_NiguiriCamaron_3
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 44
+        width: 318
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be1e5514aea228f4d8c8cffbd19d6a3b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TemakiAtun_SalmonSashimi_MakiCangrejo_NiguiriCamaron_4
+      rect:
+        serializedVersion: 2
+        x: 1501
+        y: 59
+        width: 314
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c98500858e0503b468b8311498b0cdbf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
