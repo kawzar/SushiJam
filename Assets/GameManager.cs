@@ -35,9 +35,14 @@ public class GameManager : ScriptSingleton<GameManager>
 	[SerializeField] public GameObject nails;
     public GameOverScreen gameOverScreen;
 
+    public Animator bearAnimator;
+    [SerializeField] GameObject bearImageGameObject;
+
     private new void Awake()
     {
         base.Awake();
         gameOverScreen = FindObjectOfType<GameOverScreen>();
+
+        bearAnimator = bearImageGameObject.GetComponent<Animator>();
     }
 }

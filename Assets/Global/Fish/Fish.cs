@@ -43,6 +43,7 @@ namespace Global
 
         public void Move(Action onCOmplete)
         {
+            GameManager.Instance.bearAnimator.SetBool("isHappy", true);
             var moveToHit=_sprite.transform.DOMove(GameManager.Instance.HitPoint.position, _speed);
             moveToHit.OnComplete(() =>
             {
@@ -50,6 +51,8 @@ namespace Global
                 TimeStuff.DoAfter(
                     () =>
                     {
+                        GameManager.Instance.bearAnimator.SetBool("isHappy", false);
+
                         TargetSelection.Instance._inPosition = false;
                         var end=_sprite.transform.DOMove(GameManager.Instance.DestinyPoint.position, _speed);
                         end.OnComplete(()=>
@@ -65,13 +68,17 @@ namespace Global
         
         public void MoveFever(Action onCOmplete)
         {
-            var moveToHit=_sprite.transform.DOMove(GameManager.Instance.HitPoint.position, _speedFever);
+            GameManager.Instance.bearAnimator.SetBool("isHappy", true);
+
+            var moveToHit =_sprite.transform.DOMove(GameManager.Instance.HitPoint.position, _speedFever);
             moveToHit.OnComplete(() =>
             {
                 TargetSelection.Instance._inPosition = true;
                 TimeStuff.DoAfter(
                     () =>
                     {
+                        GameManager.Instance.bearAnimator.SetBool("isHappy", false);
+
                         TargetSelection.Instance._inPosition = false;
                         var end=_sprite.transform.DOMove(GameManager.Instance.DestinyPoint.position, _speedFever);
                         end.OnComplete(()=>
