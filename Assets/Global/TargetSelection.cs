@@ -1,3 +1,4 @@
+using Global.States;
 using Global.Stats;
 using UnityEngine;
 using UnityEngine.UI;
@@ -27,6 +28,8 @@ namespace Global
                 GameStats.Instance.Decrement();
                 Bear.Bear.Instance.NailToZero();
             }
+
+            GiverLevels.Instance.GetRandom().SetTarget();
         }
 
         public void SetTarget(Fish target)
