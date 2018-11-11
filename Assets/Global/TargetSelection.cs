@@ -55,5 +55,10 @@ namespace Global
                 _currentImage.gameObject.SetActive(false);
             }
         }
+
+        public Fish GetCorrect()
+        {
+            return _correctTarget;
+        }
     }
 }

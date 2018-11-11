@@ -8,7 +8,8 @@ namespace Global
     public abstract class Fish
     {
         protected SpriteRenderer _sprite;
-        protected float _speed=0.5f; 
+        protected float _speed=0.5f;
+        protected float _speedFever=0.3f; 
 
         public void Move()
         {
@@ -59,6 +60,28 @@ namespace Global
                         });
 
                     },_speed);
+            });
+        }
+        
+        public void MoveFever(Action onCOmplete)
+        {
+            var moveToHit=_sprite.transform.DOMove(GameManager.Instance.HitPoint.position, _speedFever);
+            moveToHit.OnComplete(() =>
+            {
+                TargetSelection.Instance._inPosition = true;
+                TimeStuff.DoAfter(
+                    () =>
+                    {
+                        TargetSelection.Instance._inPosition = false;
+                        var end=_sprite.transform.DOMove(GameManager.Instance.DestinyPoint.position, _speedFever);
+                        end.OnComplete(()=>
+                        {
+                            _sprite.transform.position = GameManager.Instance.StartPoint.position;
+                            onCOmplete.Invoke();
+                            
+                        });
+
+                    },_speedFever);
             });
         }
     }

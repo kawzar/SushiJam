@@ -7,16 +7,19 @@ namespace Global.States
     public class PlayerTurn:GameState
     {
         private bool stop=false;
+        private Action ActionBear;
         
         
         public void Start()
         {
+            ActionBear = Normal;
             Debug.Log("Holis player turn");
             var level = GiverLevels.Instance.GetRandom();
             level.SetTarget();
             TargetGiver.Instance.Get(AnotherFish);
             Watch.Instance.Init((() => stop=true));
-            
+            NailScript.Instance.OnFever(ChangeToFever);
+            NailScript.Instance.OnNormal(ChangeToNormal);
             SwipeManager.OnSwipeHappened += PlayerSwipe;
 
         }
@@ -25,7 +28,7 @@ namespace Global.States
         {
             if (!stop)
             {
-                TargetGiver.Instance.Get(AnotherFish);    
+                ActionBear.Invoke();
             }
             else
             {
@@ -34,10 +37,29 @@ namespace Global.States
             
         }
 
+        public void Normal()
+        {
+            TargetGiver.Instance.Get(AnotherFish);
+        }
+
+        public void Fever()
+        {
+            TargetGiver.Instance.GetOnFever(AnotherFish);
+        }
+
+        public void ChangeToFever()
+        {
+            ActionBear = Fever;
+            
+        }
+
+        public void ChangeToNormal()
+        {
+            ActionBear = Normal;
+        }
+
         private void PlayerSwipe(InputAction direction)
         {
-            Debug.Log("holis");
-
             TargetSelection.Instance.HitTarget();
         }
 

@@ -1,9 +1,12 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using RookBirdTools.MoreTools;
+using RookBirdTools.Patterns;
 
-public class NailScript : MonoBehaviour
+public class NailScript : ScriptSingleton<NailScript>
 {
     [SerializeField]
     GameObject[] waypoints;
@@ -12,7 +15,19 @@ public class NailScript : MonoBehaviour
 
     float initialPosition = 0f;
     int iteration = 0;
+	private Action _onFever;
+	private Action _onNormal;
+	
 
+	public void OnFever(Action onFever)
+	{
+		_onFever = onFever;
+	}
+
+	public void OnNormal(Action onNormal)
+	{
+		_onNormal = onNormal;
+	}
 
     public void GrowNails()
     {
@@ -23,7 +38,8 @@ public class NailScript : MonoBehaviour
         }
         else
         {
-	        
+	        _onFever?.Invoke();
+	        TimeStuff.DoAfter(()=>{_onNormal.Invoke();},5);
         }
     }
 
