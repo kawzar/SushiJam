@@ -13,6 +13,20 @@ public class GameManager : ScriptSingleton<GameManager>
     public Image salmonRecipeImg;
     public Image tunaRecipeImg;
     #endregion
+	
+	#region Fishs
+
+	[Header("Fish sprites")] 
+	public SpriteRenderer shrimpImg;
+	public SpriteRenderer salmonImg;
+	public SpriteRenderer crabImg;
+	public SpriteRenderer tunaImg;
+
+	public Transform StartPoint;
+	public Transform DestinyPoint;
+	public Transform HitPoint;
+	
+	#endregion
        
     // Use this for initialization
     void Start () {

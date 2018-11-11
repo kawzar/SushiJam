@@ -4,12 +4,12 @@ namespace Global.Stats
     {
         public override int Increment()
         {
-            return 1;
+            return 50;
         }
 
         public override int Decrement()
         {
-            return 1;
+            return 20;
         }
     }
 }

@@ -9,7 +9,10 @@ namespace Global
         public void Get()
         {
             var fish = GiverFIsh.Instance.Random();
-            
+            TargetSelection.Instance.SetTarget(fish);
+            Fish.Move();
+
+
         }
         
         

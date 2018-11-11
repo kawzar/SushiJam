@@ -19,6 +19,10 @@ namespace Global
             {
                 GameStats.Instance.Increment();
             }
+            else
+            {
+                GameStats.Instance.Decrement();
+            }
         }
 
         public void SetTarget(Fish target)
