@@ -18,19 +18,22 @@ public class SacredMusic : ScriptSingleton<SacredMusic>
     {
         IntroTema.Play();
         IntroTema.volume = 0;
+        IntroTema.DOFade(1, 3);
     }
 
     public void StopIntro()
     {
+        IntroTema.DOFade(0, 2);
         IntroTema.Stop();
     } 
 
     public void PlayLoopTema()
     {
         LoopTema.Play();
-        LoopTemaFever.Play();
+        LoopTema.volume = 0;
+        LoopTema.DOFade(1, 5);
         LoopTemaFever.volume = 0;
-        
+        LoopTemaFever.Play();
     }
 
     public void PlayLoopTemaFever()
