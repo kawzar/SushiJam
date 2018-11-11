@@ -5,7 +5,7 @@ using TMPro;
 using System;
 using Global.Stats;
 
-public class Start : MyScreen
+public class StartScreen : MyScreen
 {
     public void ShowStartScreen()
     {
