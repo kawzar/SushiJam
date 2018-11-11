@@ -34,6 +34,7 @@ public class GameManager : ScriptSingleton<GameManager>
 	
 	[SerializeField] public GameObject nails;
     public GameOverScreen gameOverScreen;
+    public StartScreen StartScreen;
 
     public Animator bearAnimator;
     [SerializeField] GameObject bearImageGameObject;
@@ -42,6 +43,7 @@ public class GameManager : ScriptSingleton<GameManager>
     {
         base.Awake();
         gameOverScreen = FindObjectOfType<GameOverScreen>();
+        StartScreen = FindObjectOfType<StartScreen>();
 
         bearAnimator = bearImageGameObject.GetComponent<Animator>();
     }

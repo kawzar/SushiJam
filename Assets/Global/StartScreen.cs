@@ -7,8 +7,8 @@ using Global.Stats;
 
 public class StartScreen : MyScreen
 {
-    public void ShowStartScreen()
+    public void HideStartScreen()
     {
-        Show();
+        Hide();
     }
 }

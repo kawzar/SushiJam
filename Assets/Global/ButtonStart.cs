@@ -7,6 +7,7 @@ namespace Global
     {
         public void OnClick()
         {
+            GameManager.Instance.StartScreen.HideStartScreen();
             SacredMusic.Instance.StopIntro();
             var next= new PlayerTurn();
             next.Start();
