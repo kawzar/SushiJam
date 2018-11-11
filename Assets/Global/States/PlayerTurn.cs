@@ -67,6 +67,7 @@ namespace Global.States
 
         public void Next()
         {
+            SwipeManager.OnSwipeHappened -= PlayerSwipe;
             GameObject.FindObjectOfType<HandMovement>().CanMove=false;
             SacredMusic.Instance.StopPlayLoop();
             var next= new EndGame();
