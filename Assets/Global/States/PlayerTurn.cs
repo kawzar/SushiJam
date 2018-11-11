@@ -67,7 +67,7 @@ namespace Global.States
 
         public void Next()
         {
-            GameObject.FindObjectOfType<HandMovement>().CanMove=true;
+            GameObject.FindObjectOfType<HandMovement>().CanMove=false;
             SacredMusic.Instance.StopPlayLoop();
             var next= new EndGame();
             next.Start();
