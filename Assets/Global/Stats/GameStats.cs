@@ -22,7 +22,7 @@ namespace Global.Stats
 
         public void Decrement()
         {
-            _score = _score == 0 ? 0 : _score - _resolver.Decrement();
+            _score = _score - _resolver.Decrement() > 0 ? _score - _resolver.Decrement() : 0;
         }
         
         public int GetScore()

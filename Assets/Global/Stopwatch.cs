@@ -13,7 +13,7 @@ namespace Assets.Global
 
         public Stopwatch()
         {
-            MaxTime = 15f;
+            MaxTime = 60f;
             RemainingTime = MaxTime;
             isTimeRunning = false;
         }
