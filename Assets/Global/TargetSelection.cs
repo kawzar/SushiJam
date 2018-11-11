@@ -16,7 +16,7 @@ namespace Global
 
         public void HitTarget()
         {
-            if (_inPosition && (_currentTarget == _correctTarget))
+            if ((_currentTarget == _correctTarget))
             {
                 GameStats.Instance.Increment();
             }

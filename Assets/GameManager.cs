@@ -9,8 +9,6 @@ using UnityEngine.UI;
 
 public class GameManager : ScriptSingleton<GameManager>
 {
-    public int score;
-
     [SerializeField]
     TextMeshProUGUI stopwatchText;
 

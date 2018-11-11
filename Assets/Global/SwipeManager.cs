@@ -10,6 +10,7 @@ public class SwipeManager : MonoBehaviour
     private Vector3 lp;   //Last touch position
     private float dragDistance;  //minimum distance for a swipe to be registered
 
+    public void InvokeSwipeHappened(InputAction direction) => OnSwipeHappened?.Invoke(direction);
     public delegate void SwipeHappened(InputAction direction);
     public static event SwipeHappened OnSwipeHappened;
     

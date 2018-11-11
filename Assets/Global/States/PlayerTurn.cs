@@ -17,6 +17,8 @@ namespace Global.States
 
         private void PlayerSwipe(InputAction direction)
         {
+            Debug.Log("holis");
+
             TargetSelection.Instance.HitTarget();
         }
 

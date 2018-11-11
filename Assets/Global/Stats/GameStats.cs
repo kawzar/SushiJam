@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace Global.Stats
 {
     public class GameStats
@@ -7,10 +9,17 @@ namespace Global.Stats
         protected int _score = 0;
         
         private StatsResolver _resolver;
+        
+        private GameStats()
+        {
+            _resolver = new NormalStats();
+        }
 
         public void Increment()
         {
+            Debug.Log("Changed score beefore " + _score);
             _score = _score + _resolver.Increment();
+            Debug.Log("Changed score " + _score);
         }
 
         public void Decrement()
