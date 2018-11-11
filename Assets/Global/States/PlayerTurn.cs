@@ -13,11 +13,12 @@ namespace Global.States
         public void Start()
         {
             SacredMusic.Instance.PlayLoopTema();
+            SacredMusic.Instance.PlayWaterfall();
             ActionBear = Normal;
-            Debug.Log("Holis player turn");
             var level = GiverLevels.Instance.GetRandom();
             level.SetTarget();
             TargetGiver.Instance.Get(AnotherFish);
+            GameObject.FindObjectOfType<HandMovement>().CanMove=true;
             Watch.Instance.Init((() => stop=true));
             NailScript.Instance.OnFever(ChangeToFever);
             NailScript.Instance.OnNormal(ChangeToNormal);
@@ -66,6 +67,8 @@ namespace Global.States
 
         public void Next()
         {
+            SwipeManager.OnSwipeHappened -= PlayerSwipe;
+            GameObject.FindObjectOfType<HandMovement>().CanMove=false;
             SacredMusic.Instance.StopPlayLoop();
             var next= new EndGame();
             next.Start();

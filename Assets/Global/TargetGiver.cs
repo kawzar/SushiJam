@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 namespace Global
 {
@@ -31,6 +32,8 @@ namespace Global
         public void GetOnFever(Action onCOmplete)
         {
             var fish = TargetSelection.Instance.GetCorrect();
+            TargetSelection.Instance.SetTarget(fish);
+            Debug.Log(fish.GetType());
             fish.MoveFever(onCOmplete);
         }
         

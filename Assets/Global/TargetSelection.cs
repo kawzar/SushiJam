@@ -19,6 +19,7 @@ namespace Global
         {
             if ((_currentTarget == _correctTarget))
             {
+                _currentTarget.Reset();
                 GameStats.Instance.Increment();
                 Bear.Bear.Instance.NailsUp();
                 

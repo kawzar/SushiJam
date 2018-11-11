@@ -38,8 +38,13 @@ public class NailScript : ScriptSingleton<NailScript>
         }
         else
         {
-	        _onFever?.Invoke();
-	        TimeStuff.DoAfter(()=>{_onNormal.Invoke();},5);
+	        SacredMusic.Instance.PlayLoopTemaFever();
+	        _onFever.Invoke();
+	        TimeStuff.DoAfter(() =>
+	        {
+		        SacredMusic.Instance.StopLoopTemaFever();
+		        _onNormal.Invoke();
+	        },5);
         }
     }
 

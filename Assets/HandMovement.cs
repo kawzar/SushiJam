@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using DG.Tweening;
+using RookBirdTools.Patterns;
 
 public class HandMovement : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class HandMovement : MonoBehaviour
     GameObject waypoint3;
 
     private bool isMovingHand;
+	
+	public bool CanMove { get; set; }
 
     private void Awake()
     {
@@ -21,7 +24,7 @@ public class HandMovement : MonoBehaviour
 
     public void MoveHand(InputAction direction)
     {
-        if (!isMovingHand && (direction == InputAction.Down || direction == InputAction.Up))
+        if (CanMove && !isMovingHand && (direction == InputAction.Down || direction == InputAction.Up))
         {
             isMovingHand = true;
 
