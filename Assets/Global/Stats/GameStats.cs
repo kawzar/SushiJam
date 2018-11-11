@@ -17,14 +17,12 @@ namespace Global.Stats
 
         public void Increment()
         {
-            Debug.Log("Changed score beefore " + _score);
             _score = _score + _resolver.Increment();
-            Debug.Log("Changed score " + _score);
         }
 
         public void Decrement()
         {
-            _score = _score - _resolver.Decrement();
+            _score = _score == 0 ? 0 : _score - _resolver.Decrement();
         }
         
         public int GetScore()

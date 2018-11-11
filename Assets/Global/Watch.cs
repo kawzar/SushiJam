@@ -5,38 +5,35 @@ using RookBirdTools.Patterns;
 using TMPro;
 using UnityEngine;
 
-namespace Global
+public class Watch : ScriptSingleton<Watch>
 {
-    public class Watch:ScriptSingleton<Watch>
+    [SerializeField]
+    TextMeshProUGUI stopwatchText;
+
+    [SerializeField]
+    TextMeshProUGUI scorePointsText;
+    private Stopwatch stopwatch;
+
+    private bool init;
+
+
+    public void Init(Action onStop)
     {
-        [SerializeField]
-        TextMeshProUGUI stopwatchText;
+        stopwatch = new Stopwatch();
+        stopwatch.OnStop(onStop);
+        stopwatch.Start();
+        init = true;
+    }
 
-        [SerializeField]
-        TextMeshProUGUI scorePointsText;
-        private Stopwatch stopwatch;
-
-        private bool init;
-        
-        
-        public void Init(Action onStop)
+    void Update()
+    {
+        if (init)
         {
-            stopwatch = new Stopwatch();
-            stopwatch.OnStop(onStop);
-            stopwatch.Start();
-            init = true;
+            stopwatch.UpdateClock(Time.deltaTime);
+            stopwatchText.text = stopwatch.RemainingTime.ToString("0.00");
+
+            scorePointsText.text = GameStats.Instance.GetScore().ToString();
         }
 
-        void Update ()
-        {
-            if (init)
-            {
-                stopwatch.UpdateClock(Time.deltaTime);
-                stopwatchText.text = stopwatch.RemainingTime.ToString("0.00");
-
-                scorePointsText.text = GameStats.Instance.GetScore().ToString();
-            }
-            
-        }
     }
 }
