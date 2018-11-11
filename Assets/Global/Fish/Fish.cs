@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using RookBirdTools.MoreTools;
 using UnityEngine;
@@ -19,7 +20,12 @@ namespace Global
                         () =>
                         {
                             TargetSelection.Instance._inPosition = false;
-                            _sprite.transform.DOMove(GameManager.Instance.DestinyPoint.position, _speed);
+                            var end=_sprite.transform.DOMove(GameManager.Instance.DestinyPoint.position, _speed);
+                            end.OnComplete(()=>
+                            {
+                                _sprite.transform.position = GameManager.Instance.StartPoint.position;
+                            
+                            });
                         },_speed);
                 });
         }
@@ -32,6 +38,28 @@ namespace Global
         public void SetFeverSpeed()
         {
             _speed = 0.2f;
+        }
+
+        public void Move(Action onCOmplete)
+        {
+            var moveToHit=_sprite.transform.DOMove(GameManager.Instance.HitPoint.position, _speed);
+            moveToHit.OnComplete(() =>
+            {
+                TargetSelection.Instance._inPosition = true;
+                TimeStuff.DoAfter(
+                    () =>
+                    {
+                        TargetSelection.Instance._inPosition = false;
+                        var end=_sprite.transform.DOMove(GameManager.Instance.DestinyPoint.position, _speed);
+                        end.OnComplete(()=>
+                        {
+                            _sprite.transform.position = GameManager.Instance.StartPoint.position;
+                            onCOmplete.Invoke();
+                            
+                        });
+
+                    },_speed);
+            });
         }
     }
 }

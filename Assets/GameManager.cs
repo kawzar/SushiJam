@@ -9,14 +9,7 @@ using UnityEngine.UI;
 
 public class GameManager : ScriptSingleton<GameManager>
 {
-    [SerializeField]
-    TextMeshProUGUI stopwatchText;
-
-    [SerializeField]
-    TextMeshProUGUI scorePointsText;
-
-    private Stopwatch stopwatch;
-
+    
     #region Fish Sprites
     [Header("Fish recipe images")]
     public Image shrimpRecipeImg;
@@ -38,18 +31,8 @@ public class GameManager : ScriptSingleton<GameManager>
 	public Transform HitPoint;
 
     #endregion
+	
+	[SerializeField] public GameObject nails;
 
-    private void Start()
-    {
-        stopwatch = new Stopwatch();
-        stopwatch.Start();
-    }
-
-    void Update ()
-    {
-        stopwatch.UpdateClock(Time.deltaTime);
-        stopwatchText.text = stopwatch.RemainingTime.ToString("0.00");
-
-        scorePointsText.text = GameStats.Instance.GetScore().ToString();
-    }
+    
 }

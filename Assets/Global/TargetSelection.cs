@@ -19,10 +19,13 @@ namespace Global
             if ((_currentTarget == _correctTarget))
             {
                 GameStats.Instance.Increment();
+                Bear.Bear.Instance.NailsUp();
+                
             }
             else
             {
                 GameStats.Instance.Decrement();
+                Bear.Bear.Instance.NailToZero();
             }
         }
 

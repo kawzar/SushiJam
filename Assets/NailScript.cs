@@ -21,7 +21,18 @@ public class NailScript : MonoBehaviour
             iteration++;
             transform.DOLocalMove(waypoints[iteration].transform.localPosition, animationDuration);
         }
+        else
+        {
+	        
+        }
     }
+
+
+	public void ToBorn()
+	{
+		iteration = 0;
+		transform.DOLocalMove(waypoints[iteration].transform.localPosition, animationDuration);
+	}
 
 	// Use this for initialization
 	void Start () 

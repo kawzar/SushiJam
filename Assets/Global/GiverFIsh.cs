@@ -19,7 +19,7 @@ namespace Global
 
         public Fish Random()
         {
-            var rand = UnityEngine.Random.Range(1, 4);
+            var rand = UnityEngine.Random.Range(0, 4);
             return _fishes[rand];
         }
     }

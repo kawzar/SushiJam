@@ -1,3 +1,5 @@
+using System;
+
 namespace Global
 {
     public class TargetGiver
@@ -11,6 +13,15 @@ namespace Global
             var fish = GiverFIsh.Instance.Random();
             TargetSelection.Instance.SetTarget(fish);
             fish.Move();
+
+
+        }
+        
+        public void Get(Action onCOmplete)
+        {
+            var fish = GiverFIsh.Instance.Random();
+            TargetSelection.Instance.SetTarget(fish);
+            fish.Move(onCOmplete);
 
 
         }

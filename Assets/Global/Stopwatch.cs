@@ -1,4 +1,6 @@
-﻿namespace Assets.Global
+﻿using System;
+
+namespace Assets.Global
 {
     public class Stopwatch
     {
@@ -7,10 +9,11 @@
 
         public float RemainingTime { get; private set; }
         public float MaxTime { get; set; }
+        private Action _onStop;
 
         public Stopwatch()
         {
-            MaxTime = 60f;
+            MaxTime = 15f;
             RemainingTime = MaxTime;
             isTimeRunning = false;
         }
@@ -27,13 +30,24 @@
                 currentTime += deltaTime;
                 RemainingTime = MaxTime - currentTime;
 
-                isTimeRunning = RemainingTime > 0;
+                isTimeRunning = RemainingTime > 0.01;
+                
+                    
+            }
+            if (!isTimeRunning)
+            {
+                _onStop?.Invoke();
             }
         }
 
         private void StopWatch()
         {
             isTimeRunning = false;
+        }
+
+        public void OnStop(Action onStop)
+        {
+            _onStop = onStop;
         }
     }
 }
