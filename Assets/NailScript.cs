@@ -44,7 +44,7 @@ public class NailScript : ScriptSingleton<NailScript>
 	        {
 		        SacredMusic.Instance.StopLoopTemaFever();
 		        _onNormal.Invoke();
-	        },50);
+	        },5);
         }
     }
 
