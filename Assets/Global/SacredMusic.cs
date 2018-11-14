@@ -28,6 +28,8 @@ public class SacredMusic : ScriptSingleton<SacredMusic>
     public void PlayLoopTema()
     {
         LoopTema.Play();
+        LoopTema.loop = true;
+        LoopTemaFever.loop = true;
         LoopTemaFever.volume = 0;
         LoopTemaFever.Play();
     }
