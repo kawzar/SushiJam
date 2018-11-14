@@ -64,7 +64,12 @@ namespace Global.States
 
         private void PlayerSwipe(InputAction direction)
         {
-            TargetSelection.Instance.HitTarget();
+            if (direction == InputAction.Up)
+            {
+                TargetSelection.Instance.HitTarget();
+            }
+
+            
         }
 
         public void Next()

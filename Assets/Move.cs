@@ -6,6 +6,7 @@ public class Move : MonoBehaviour {
 
     [SerializeField] GameObject hand;
     [SerializeField] GameObject nails;
+    
 
     // Use this for initialization
     void Start ()
@@ -15,11 +16,11 @@ public class Move : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
-	    if(Input.GetKeyDown(KeyCode.C))
+        if (Input.GetMouseButtonDown(0))
         {
-            nails.GetComponent<NailScript>().GrowNails();
+            SwipeManager.Instance.InvokeSwipeHappened(InputAction.Up);
         }
-
+        
         if (Input.GetKeyDown(KeyCode.X))
         {
             SwipeManager.Instance.InvokeSwipeHappened(InputAction.Down);
