@@ -16,6 +16,7 @@ public class SacredMusic : ScriptSingleton<SacredMusic>
 
     public void PlayIntro()
     {
+    	IntroTema.loop=true;
         IntroTema.Play();
     }
 
